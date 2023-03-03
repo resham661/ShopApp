@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  # debugger
+  # load_and_authorize_resource
   before_action :set_product, only: %i[ show edit update destroy ]
   before_action :authenticate_user!, expect: [:index, :show]
   
@@ -54,6 +56,6 @@ class ProductsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def product_params
-      params.require(:product).permit(:name, :price)
+      params.require(:product).permit(:name, :price,)
     end
 end
